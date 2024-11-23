@@ -1,0 +1,53 @@
+###
+GET http://localhost:4000/eventos
+
+###
+# Buscar pelo alias
+GET http://localhost:4000/eventos/festa-empresa
+
+###
+# Buscar pelo id
+GET http://localhost:4000/eventos/d1d697c0-09ac-45f7-b72f-8f065a1967e9
+
+###
+# Validacao de alias
+GET http://localhost:4000/eventos/validar/festa-empresas/d1d697c0-09ac-45f7-b72f-8f065a1967e
+
+###
+POST http://localhost:4000/eventos/acessar
+Content-Type: application/json
+
+{
+  "id": "d1d697c0-09ac-45f7-b72f-8f065a1967e9",
+  "senha": "abc1234"
+}
+
+###
+POST http://localhost:4000/eventos/festa-empresa/convidado
+Content-Type: application/json
+
+{
+    
+    "name": "Ricardo",
+    "email": "ricardo@eamil.com",
+    "confirmado": true,
+    "possuiAcompanhante": false,
+    "qtdeAcompanhantes": 0
+}
+
+
+###
+POST http://localhost:4000/eventos
+Content-Type: application/json
+
+{
+  "alias": "evento-fullStacks5",
+  "data": "2025-12-31T23:00",
+  "senha": "AlgoAqui",
+  "name": "Evento Semana FullStack",
+  "local": "São Paulo",
+  "descricao": "Algo",
+  "imagem": "https://media.istockphoto.com/id/1047259374/pt/foto/programming-source-code-abstract-background.jpg?s=612x612&w=0&k=20&c=RiXR5C_Lnp4MEL_c27pf_bNC7dyurRQpnSwDaNEhS0o=",
+  "imagemBackground": "https://media.istockphoto.com/id/1047259374/pt/foto/programming-source-code-abstract-background.jpg?s=612x612&w=0&k=20&c=RiXR5C_Lnp4MEL_c27pf_bNC7dyurRQpnSwDaNEhS0o=",
+  "publicoEsperado": 1000
+}
